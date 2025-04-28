@@ -51,7 +51,7 @@ jobs:
        cp $(pwd)/KSU_NEXT_DISCOVER/fs/read_write.c $(pwd)/fs/
        cp $(pwd)/KSU_NEXT_DISCOVER/fs/stat.c $(pwd)/fs/
        cp $(pwd)/KSU_NEXT_DISCOVER/fs/devpts/inode.c $(pwd)/fs/devpts/
-       cp $(pwd)/KSU_NEXT_DISCOVER/security/selinux/hooks.c $(pwd)/‎security/selinux/
+       cp $(pwd)/KSU_NEXT_DISCOVER/security/selinux/hooks.c $(pwd)/security/selinux/
       
     - name: Build KSU_NEXT-Kernel
       run: |
