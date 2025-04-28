@@ -1,4 +1,4 @@
-name: Build honor_Berkeley Original Kernel
+name: Build Honor_Berkeley Original Kernel
 on:
   workflow_dispatch:
   schedule:
