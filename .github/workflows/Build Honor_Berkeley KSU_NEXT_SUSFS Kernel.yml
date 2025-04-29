@@ -61,8 +61,15 @@ jobs:
        cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/susfs.c $(pwd)/fs/
        cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/devpts/inode.c $(pwd)/fs/devpts/
        cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/notify/fdinfo.c $(pwd)/fs/notify/
-       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/overlayfs/* $(pwd)/fs/overlayfs/
-       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/proc/* $(pwd)/fs/proc/
+       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/overlayfs/inode.c $(pwd)/fs/overlayfs/
+       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/overlayfs/overlayfs.h $(pwd)/fs/overlayfs/
+       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/overlayfs/readdir.c $(pwd)/fs/overlayfs/
+       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/overlayfs/super.c $(pwd)/fs/overlayfs/
+       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/proc/cmdline.c $(pwd)/fs/proc/
+       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/proc/fd.c $(pwd)/fs/proc/
+       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/proc/task_mmu.c $(pwd)/fs/proc/
+       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/include/linux/* $(pwd)/include/linux/
+       cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/kernel/* $(pwd)/kernel/
        cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/security/selinux/hooks.c $(pwd)/security/selinux/
       
     - name: Build KSU_NEXT_SUSFS-Kernel
