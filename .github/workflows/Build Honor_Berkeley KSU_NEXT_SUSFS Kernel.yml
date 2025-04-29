@@ -43,7 +43,7 @@ jobs:
       run: |
         echo "TIME=$(TZ=UTC-8 date +%m%d%H%M )" >> $GITHUB_OUTPUT
         
-    - name: Copy KSU_NEXT_SUSFS support file
+    - name: Copy KSU_NEXT_SUSFS Support File
       run: |
        cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/drivers/input/input.c $(pwd)/drivers/input/
        cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/fs/dcache.c $(pwd)/fs/
@@ -72,7 +72,7 @@ jobs:
        cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/kernel/* $(pwd)/kernel/
        cp $(pwd)/KSU_NEXT_SUSFS_DISCOVER/security/selinux/hooks.c $(pwd)/security/selinux/
       
-    - name: Build KSU_NEXT_SUSFS-Kernel
+    - name: Build KSU_NEXT_SUSFS Kernel
       run: |
        sudo ln -sf /usr/bin/python2.7 /usr/bin/python
        if [ -d include/config ];
@@ -94,7 +94,7 @@ jobs:
        tools/mkbootimg --kernel out/arch/arm64/boot/Image.gz --base 0x0 --cmdline "loglevel=4 initcall_debug=n page_tracker=on slub_min_objects=16 unmovable_isolate1=2:192M,3:224M,4:256M printktimer=0xfff0a000,0x534,0x538 androidboot.selinux=enforcing buildvariant=user" --tags_offset 0x07A00000 --kernel_offset 0x00080000 --ramdisk_offset 0x07c00000 --header_version 1 --os_version 9 --os_patch_level 2020-09-05  --output Kernel-KSU_NEXT_SUSFS-enforcing-${{ steps.get_time.outputs.TIME }}.img
        tools/mkbootimg --kernel out/arch/arm64/boot/Image.gz --base 0x0 --cmdline "loglevel=4 initcall_debug=n page_tracker=on slub_min_objects=16 unmovable_isolate1=2:192M,3:224M,4:256M printktimer=0xfff0a000,0x534,0x538 androidboot.selinux=permissive buildvariant=user" --tags_offset 0x07A00000 --kernel_offset 0x00080000 --ramdisk_offset 0x07c00000 --header_version 1 --os_version 9 --os_patch_level 2020-09-05  --output Kernel-KSU_NEXT_SUSFS-permissive-${{ steps.get_time.outputs.TIME }}.img
        
-    - name: Upload KSU_NEXT_SUSFS-Kernel
+    - name: Upload KSU_NEXT_SUSFS Kernel
       uses: actions/upload-artifact@v4
       with:
         name: Kernel-KSU_NEXT_SUSFS-${{ steps.get_time.outputs.TIME }}
